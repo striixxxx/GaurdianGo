@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Lock, User } from "lucide-react";
 
 function Login() {
   const [username, setUsername] = useState("");
@@ -7,7 +8,7 @@ function Login() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    const response = await fetch("http://localhost:8000/auth/login", {
+    const response = await fetch("auth/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ username, password }),
@@ -23,42 +24,48 @@ function Login() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-blue-100 to-blue-200">
+    <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-indigo-300 via-blue-200 to-cyan-200 px-4">
       <form
         onSubmit={handleSubmit}
-        className="bg-white p-8 rounded-2xl shadow-lg w-full max-w-sm"
+        className="bg-white/90 backdrop-blur-md p-8 rounded-2xl shadow-xl w-full max-w-md transition hover:shadow-2xl"
       >
-        <h1 className="text-2xl font-semibold mb-6 text-center text-gray-800">
+        <h1 className="text-3xl font-bold mb-8 text-center text-gray-800">
           Login
         </h1>
 
-        <label className="block mb-4">
-          <span className="text-gray-700 mb-1 block">Username</span>
-          <input
-            type="text"
-            placeholder="Enter your username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            className="border border-gray-300 rounded-lg p-3 w-full focus:ring-2 focus:ring-blue-400 focus:outline-none transition"
-            required
-          />
-        </label>
+        <div className="mb-6">
+          <label className="block text-gray-700 font-medium mb-2">Username</label>
+          <div className="flex items-center border border-gray-300 rounded-lg p-3 focus-within:ring-2 focus-within:ring-indigo-400 transition">
+            <User className="text-gray-400 mr-2" size={20} />
+            <input
+              type="text"
+              placeholder="Enter your username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              className="w-full bg-transparent focus:outline-none"
+              required
+            />
+          </div>
+        </div>
 
-        <label className="block mb-6">
-          <span className="text-gray-700 mb-1 block">Password</span>
-          <input
-            type="password"
-            placeholder="Enter your password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            className="border border-gray-300 rounded-lg p-3 w-full focus:ring-2 focus:ring-blue-400 focus:outline-none transition"
-            required
-          />
-        </label>
+        <div className="mb-8">
+          <label className="block text-gray-700 font-medium mb-2">Password</label>
+          <div className="flex items-center border border-gray-300 rounded-lg p-3 focus-within:ring-2 focus-within:ring-indigo-400 transition">
+            <Lock className="text-gray-400 mr-2" size={20} />
+            <input
+              type="password"
+              placeholder="Enter your password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="w-full bg-transparent focus:outline-none"
+              required
+            />
+          </div>
+        </div>
 
         <button
           type="submit"
-          className="w-full bg-blue-500 hover:bg-blue-600 text-white font-medium py-3 rounded-lg transition"
+          className="w-full bg-gradient-to-r from-indigo-500 to-blue-600 hover:from-indigo-600 hover:to-blue-700 text-white font-semibold py-3 rounded-lg transition transform hover:scale-[1.02]"
         >
           Login
         </button>
