@@ -2,13 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
 
 @layer base {
   :root {
-    --background: 248 250 252;
+    --background: 220 14% 96%;
     --foreground: 215 28% 17%;
 
     --card: 0 0% 100%;
@@ -70,56 +67,8 @@ All colors MUST be HSL.
     --right-sidebar-border: 220 13% 91%;
   }
 
-  .dark {
-    --background: 222 47% 11%;
-    --foreground: 210 40% 98%;
-
-    --card: 222 47% 11%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222 47% 11%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 214 84% 65%;
-    --primary-foreground: 222 47% 11%;
-    --primary-hover: 214 84% 58%;
-
-    --secondary: 25 95% 60%;
-    --secondary-foreground: 222 47% 11%;
-    --secondary-hover: 25 95% 52%;
-
-    --muted: 217 33% 17%;
-    --muted-foreground: 215 20% 65%;
-
-    --accent: 217 33% 17%;
-    --accent-foreground: 210 40% 98%;
-
-    --success: 142 76% 45%;
-    --success-foreground: 210 40% 98%;
-    
-    --warning: 45 93% 58%;
-    --warning-foreground: 222 47% 11%;
-    
-    --destructive: 0 63% 31%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217 33% 17%;
-    --input: 217 33% 17%;
-    --ring: 214 84% 65%;
-    /*left side bar */
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-    /* right side bar */
-    --right-sidebar-background: 0 0% 0%;     /* pure black in dark mode */
-    --right-sidebar-foreground: 210 40% 98%; /* white text */
-    --right-sidebar-border: 217 33% 17%;     /* dark gray border */
-  }
+  
+  
 }
 
 @layer base {
@@ -131,6 +80,17 @@ All colors MUST be HSL.
     @apply bg-background text-foreground;
   }
 }
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* 🚫 Prevent overscroll background flash (iOS Safari) */
+html, body {
+  overscroll-behavior: none;
+  background-color: hsl(var(--background)); /* use your background variable */
+}
+
 .right-sidebar {
   background-color: hsl(var(--right-sidebar-background));
   color: hsl(var(--right-sidebar-foreground));
@@ -140,3 +100,16 @@ All colors MUST be HSL.
 }
 
 
+html, body{
+  background-color: hsl(var(--background)) !important;
+}
+select {
+  background-color: hsl(var(--card)) !important;
+  color: hsl(var(--foreground)) !important;
+}
+
+select:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px hsl(var(--ring));
+  background-color: hsl(var(--card)) !important;
+}

@@ -17,3 +17,4 @@ app.include_router(tourists.router, prefix="/tourists", tags=["Tourists"])
 app.include_router(alerts.router, prefix="/alerts", tags=["Alerts"])
 
 app.mount("/", StaticFiles(directory="static", html=True), name="static")
+
