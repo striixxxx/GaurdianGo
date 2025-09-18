@@ -11,6 +11,7 @@ import Heatmaps from "./pages/Heatmaps";
 import Reports from "./pages/Reports";
 import Settings from "./pages/Settings";
 import NotFound from "./pages/NotFound";
+import Login from "./pages/login"; // ✅ new login page
 
 const queryClient = new QueryClient();
 
@@ -20,18 +21,22 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <Layout>
-          <Routes>
+        <Routes>
+          {/* ✅ Public route */}
+          <Route path="/login" element={<Login />} />
+
+          {/* ✅ Protected routes */}
+          <Route element={<Layout />}>
             <Route path="/" element={<Dashboard />} />
             <Route path="/tourists" element={<TouristManagement />} />
             <Route path="/alerts" element={<Alerts />} />
             <Route path="/heatmaps" element={<Heatmaps />} />
             <Route path="/reports" element={<Reports />} />
             <Route path="/settings" element={<Settings />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            {/* Catch-all for unknown routes */}
             <Route path="*" element={<NotFound />} />
-          </Routes>
-        </Layout>
+          </Route>
+        </Routes>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
