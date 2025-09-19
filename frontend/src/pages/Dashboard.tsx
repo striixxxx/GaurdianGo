@@ -73,36 +73,163 @@ const getSeverityColor = (severity: string) => {
 };
 
 
+// export default function Dashboard() {
+//   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+//   return (
+//     <div className="space-y-6 ">
+//       <div className="flex items-center justify-between">
+//          <div className="flex items-center gap-3">
+//     {/* Hamburger */}
+//     {/* <button 
+//       className="p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 md:hidden"
+//       onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+//     >
+//       <Menu className="w-6 h-6 text-foreground" />
+//     </button> */}
+
+//     {/* <div>
+        
+//           <h1 className="text-3xl  text-gray-900 font-bold text-foreground">Dashboard</h1>
+//           <p className="text-muted-foreground">Tourist Safety Monitoring Overview</p>
+//         </div>
+//         </div>
+//         <div className="flex items-center gap-2">
+//           <Bell className="w-5 h-5 text-muted-foreground" />
+//           <Badge variant="destructive">3 New Alerts</Badge>
+//         </div>
+//       </div> */}
+//       <div className="flex items-center gap-2">
+//   {/* Bell with notification ping */}
+//   <div className="relative">
+//     <Bell className="w-6 h-6 text-muted-foreground" />
+//     {3 > 0 && ( // replace 3 with alertsCount from state/props
+//       <span className="absolute -top-1 -right-1 flex items-center justify-center">
+//         {/* Ping animation */}
+//         <span className="absolute inline-flex h-5 w-5 rounded-full bg-red-500 opacity-75 animate-ping"></span>
+
+//         {/* Solid circle with number */}
+//         <span className="relative inline-flex h-5 w-5 rounded-full bg-red-600 text-white text-xs font-bold items-center justify-center">
+//           {3}
+//         </span>
+//       </span>
+//     )}
+//   </div>
+
+//   {/* Existing Badge */}
+//   <Badge variant="destructive">3 New Alerts</Badge>
+// </div>
+         
+//       {/* KPI Cards */}
+//       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+//         {kpiData.map((kpi, index) => (
+//           <Card key={index} className="hover:shadow-lg transition-shadow">
+//             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+//               <CardTitle className="text-sm font-medium text-muted-foreground">
+//                 {kpi.title}
+//               </CardTitle>
+//               <kpi.icon className={`w-5 h-5 ${kpi.color}`} />
+//             </CardHeader>
+//             <CardContent>
+//               <div className="text-2xl font-bold text-foreground">{kpi.value}</div>
+//               <p className="text-xs text-muted-foreground mt-1">
+//                 {kpi.trend}
+//               </p>
+//             </CardContent>
+//           </Card>
+//         ))}
+//       </div>
+
+//       {/* Real-time Notifications */}
+//       <Card>
+//         <CardHeader>
+//           <CardTitle className="flex items-center gap-2">
+//             <AlertTriangle className="w-5 h-5 text-secondary" />
+//             Real-time Alert Feed
+//           </CardTitle>
+//         </CardHeader>
+//         <CardContent>
+//           <div className="space-y-4">
+//             {recentAlerts.map((alert) => (
+//               <div key={alert.id} className="flex items-center justify-between p-4 bg-muted/50 rounded-lg">
+//                 <div className="flex-1">
+//                   <div className="flex items-center gap-3">
+//                     <h4 className="font-medium text-foreground">{alert.tourist}</h4>
+//                     <Badge className={getSeverityColor(alert.severity)}>
+//                       {alert.severity}
+//                     </Badge>
+//                   </div>
+//                   <p className="text-sm text-muted-foreground mt-1">
+//                     {alert.type} • {alert.location}
+//                   </p>
+//                 </div>
+//                 <div className="text-right">
+//                   <p className="text-xs text-muted-foreground">{alert.time}</p>
+//                 </div>
+//               </div>
+//             ))}
+//           </div>
+//         </CardContent>
+//       </Card>
+//     </div>
+//   );
+// }
 export default function Dashboard() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  return (
-    <div className="space-y-6 ">
-      <div className="flex items-center justify-between">
-         <div className="flex items-center gap-3">
-    {/* Hamburger */}
-    {/* <button 
-      className="p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 md:hidden"
-      onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-    >
-      <Menu className="w-6 h-6 text-foreground" />
-    </button> */}
+  const alertsCount = 3; // replace with dynamic state later
 
-    <div>
-        
-          <h1 className="text-3xl  text-gray-900 font-bold text-foreground">Dashboard</h1>
-          <p className="text-muted-foreground">Tourist Safety Monitoring Overview</p>
+  return (
+    <div className="space-y-6">
+      {/* Top Bar */}
+      <div className="flex items-center justify-between">
+        <div className="flex items-center gap-3">
+          {/* Hamburger for mobile */}
+          {/* <button
+            className="p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 md:hidden"
+            onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+          >
+            <Menu className="w-6 h-6 text-foreground" />
+          </button> */}
+
+          <div>
+            <h1 className="text-3xl text-gray-900 font-bold text-foreground">
+              Dashboard
+            </h1>
+            <p className="text-muted-foreground">
+              Tourist Safety Monitoring Overview
+            </p>
+          </div>
         </div>
-        </div>
+
+        {/* Notifications */}
         <div className="flex items-center gap-2">
-          <Bell className="w-5 h-5 text-muted-foreground" />
-          <Badge variant="destructive">3 New Alerts</Badge>
+          {/* Bell with ping */}
+          <div className="relative">
+            <Bell className="w-6 h-8 text-muted-foreground" />
+            {alertsCount > 0 && (
+              <span className="absolute -top-1 -right-1 flex items-center justify-center">
+                {/* Ping animation */}
+                <span className="absolute inline-flex h-5 w-5 rounded-full bg-red-500 opacity-75 animate-ping"></span>
+
+                {/* Solid circle with number */}
+                <span className="relative inline-flex h-5 w-5 rounded-full bg-red-600 text-white text-xs font-bold items-center justify-center">
+                  {alertsCount}
+                </span>
+              </span>
+            )}
+          </div>
+
+          {/* Text Badge */}
+          
         </div>
       </div>
 
       {/* KPI Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {kpiData.map((kpi, index) => (
-          <Card key={index} className="hover:shadow-lg transition-shadow">
+          <Card
+            key={index}
+            className="hover:shadow-lg transition-shadow"
+          >
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
               <CardTitle className="text-sm font-medium text-muted-foreground">
                 {kpi.title}
@@ -110,7 +237,9 @@ export default function Dashboard() {
               <kpi.icon className={`w-5 h-5 ${kpi.color}`} />
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold text-foreground">{kpi.value}</div>
+              <div className="text-2xl font-bold text-foreground">
+                {kpi.value}
+              </div>
               <p className="text-xs text-muted-foreground mt-1">
                 {kpi.trend}
               </p>
@@ -130,10 +259,15 @@ export default function Dashboard() {
         <CardContent>
           <div className="space-y-4">
             {recentAlerts.map((alert) => (
-              <div key={alert.id} className="flex items-center justify-between p-4 bg-muted/50 rounded-lg">
+              <div
+                key={alert.id}
+                className="flex items-center justify-between p-4 bg-muted/50 rounded-lg"
+              >
                 <div className="flex-1">
                   <div className="flex items-center gap-3">
-                    <h4 className="font-medium text-foreground">{alert.tourist}</h4>
+                    <h4 className="font-medium text-foreground">
+                      {alert.tourist}
+                    </h4>
                     <Badge className={getSeverityColor(alert.severity)}>
                       {alert.severity}
                     </Badge>
@@ -143,7 +277,9 @@ export default function Dashboard() {
                   </p>
                 </div>
                 <div className="text-right">
-                  <p className="text-xs text-muted-foreground">{alert.time}</p>
+                  <p className="text-xs text-muted-foreground">
+                    {alert.time}
+                  </p>
                 </div>
               </div>
             ))}
