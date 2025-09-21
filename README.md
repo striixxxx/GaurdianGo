@@ -20,8 +20,10 @@ Video Demonstration: [Watch Video] https://www.youtube.com/watch?v=WcF6FMgVQ8M
 Live Deployment: [View Deployment] https://gaurdiangoapp.onrender.com/  ;;; https://gaurdiango.onrender.com/    ;; use username bob and password 12345  
 Source Code: [GitHub Repository] https://github.com/striixxxx/GaurdianGo  ;; https://github.com/striixxxx/GaurdianGoapp
 
-Overview of Project:
-A robust digital ecosystem comprising:
+Overview of Project: A secure, AI-driven, multilingual, and IoT-enabled tourist safety platform that connects tourists, families, law enforcement, and tourism departments through blockchain-based digital IDs and real-time monitoring. 
+
+Key Components:A robust digital ecosystem comprising:
+
 
 • Web portal and mobile app for tourists and authorities.
 • AI/ML models for behaviour tracking and predictive alerts.
@@ -29,3 +31,10 @@ A robust digital ecosystem comprising:
 • Real-time dashboards for police/tourism departments.
 • Automated alert dispatch and evidence logging systems.
 
+
+Steps to run locallly:
+Clone repo
+Create & activate virtual environment python -m venv venv source venv/bin/activate # Mac/Linux venv\Scripts\activate # Windows
+Install dependencies pip install -r requirements.txt
+Set environment variables Create a .env file
+Run the project uvicorn app.main:app --reload
