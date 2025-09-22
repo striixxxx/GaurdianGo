@@ -48,12 +48,12 @@ const metrics = [
 export default function Reports() {
   const handleDownload = (reportTitle: string) => {
     console.log(`Downloading report: ${reportTitle}`);
-    // Download logic would be implemented here
+    
   };
 
   const handleGenerateReport = () => {
     console.log("Generating new report...");
-    // Report generation logic would be implemented here
+    
   };
 
   return (

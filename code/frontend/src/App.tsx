@@ -11,7 +11,7 @@ import Heatmaps from "./pages/Heatmaps";
 import Reports from "./pages/Reports";
 import Settings from "./pages/Settings";
 import NotFound from "./pages/NotFound";
-import Login from "./pages/login"; // ✅ new login page
+import Login from "./pages/login"; 
 
 const queryClient = new QueryClient();
 
@@ -22,10 +22,10 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-          {/* ✅ Public route */}
+         
           <Route path="/login" element={<Login />} />
 
-          {/* ✅ Protected routes */}
+          
           <Route element={<Layout />}>
             <Route path="/" element={<Dashboard />} />
             <Route path="/tourists" element={<TouristManagement />} />

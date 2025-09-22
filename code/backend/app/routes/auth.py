@@ -9,12 +9,12 @@ router = APIRouter(prefix="/auth", tags=["auth"])
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
-# Pydantic model for request body
+
 class UserCredentials(BaseModel):
     username: str
     password: str
 
-# Dependency to get DB
+
 def get_db():
     db = SessionLocal()
     try:

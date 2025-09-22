@@ -36,7 +36,7 @@ export default function Heatmaps() {
         </div>
       </div>
 
-      {/* Interactive Map Placeholder */}
+      
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
@@ -58,7 +58,7 @@ export default function Heatmaps() {
       </Card>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        {/* Tourist Clusters */}
+        
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
@@ -88,7 +88,7 @@ export default function Heatmaps() {
           </CardContent>
         </Card>
 
-        {/* Risk Zones */}
+        
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2">

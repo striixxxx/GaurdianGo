@@ -43,7 +43,7 @@ cd GAURDIANGO
 
 enter the backend directory
 
-cd backend
+cd code/backend
 
 
 create and activate virtual environment

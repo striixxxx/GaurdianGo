@@ -30,13 +30,12 @@ const getSafetyScoreColor = (score: number) => {
 
 export default function TouristManagement() {
   const [searchTerm, setSearchTerm] = useState("");
-  const [tourists, setTourists] = useState<any[]>([]); // store backend data
+  const [tourists, setTourists] = useState<any[]>([]); 
 
-  // Fetch data from backend
   useEffect(() => {
     const fetchTourists = async () => {
       try {
-        const res = await fetch("/tourists/"); // note trailing slash
+        const res = await fetch("/tourists/"); 
         const data = await res.json();
         setTourists(data);
       } catch (err) {
@@ -46,7 +45,6 @@ export default function TouristManagement() {
     fetchTourists();
   }, []);
 
-  // Filter based on search term
   const filteredTourists = tourists.filter((tourist) =>
     tourist.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
     tourist.digitalId.toLowerCase().includes(searchTerm.toLowerCase()) ||

@@ -1,11 +1,9 @@
-# backend/app/routes/alerts.py
 from fastapi import APIRouter
 from typing import List
 from pydantic import BaseModel
 
 router = APIRouter()
 
-# Pydantic schema
 class Alert(BaseModel):
     id: str
     tourist: str
@@ -17,7 +15,6 @@ class Alert(BaseModel):
     description: str
     coordinates: str
 
-# Sample data
 alerts_data = [
     {
         "id": "A001",
@@ -43,7 +40,6 @@ alerts_data = [
     },
 ]
 
-# GET all alerts
 @router.get("/", response_model=List[Alert])
 def get_alerts():
     return alerts_data
