@@ -52,12 +52,12 @@ cd code/backend
 ```
 ### Create and activate virtual environment
 
-#Mac/Linux
+Mac/Linux
 ```bash
 python -m venv venv
 source venv/bin/activate
 ```
-# Windows
+Windows
 ```bash
 python -m venv venv
 venv\Scripts\activate
