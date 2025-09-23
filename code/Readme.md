@@ -1,69 +1,76 @@
-Tasks Accomplished
+# GuardianGo (Dashboard + Tourists + Chatbot)
 
- Task 1: Dashboard for Authorities : Full frontend and basic backend is completed and deployed
+**PS Chosen: SIH Hackathon - SIH25002**
 
- Task 2: Apps for tourusts : Basic frontend is completed and deployed as a website for now
+This README provides an overview of GuardianGo, focusing on the dashboard for authorities, apps for tourists, and AI-powered chatbot.
 
- Task 3: Chatbot for tourists : Fully working chatbot is integrated in the frontend 
+---
 
+## Tasks Accomplished
+- **Task 1: Dashboard for Authorities**  
+  Full frontend and basic backend completed and deployed  
+- **Task 2: Apps for Tourists**  
+  Basic frontend completed and deployed as a website for now  
+- **Task 3: Chatbot for Tourists**  
+  Fully working chatbot integrated in the frontend  
 
-Technology Stack
+---
 
+## Technology Stack
 This project leverages the following technologies:
 
-Gen AI: Chatbot for Giving recommendations on nearby places and safety tips to tourists
+- **Gen AI:** Chatbot for recommendations & safety tips  
+- **Blockchain:** Unique ID for tourist identification  
+- **Firebase Push Notifications:** Instant alerts delivery  
+- **i18n Libraries:** Multilingual support  
+- **Mapbox AI:** Interactive maps integration  
 
-Blockchain: Unique id for tourists identification
+---
 
-Firebase Push Notifications: sending instant  alerts
+## Key Features
+- **Multilingual Support:** Extend usage to tourists from different countries/regions  
+- **Chatbot:** Recommendations on nearby places + safety tips  
+- **Geofencing:** Identify high-risk areas → tourists entering those areas receive warnings  
+- **Automated Alerts:** Alerts generated if tourist is disconnected too long; anomaly detection via AI  
+- **Authorities Dashboard:** Police/Tourism officers can:  
+  - View active tourists & alerts  
+  - Identify tourist clusters  
+  - Assign a team/person to handle an alert → improves response validity  
 
-i18n libraries : Multilingual support
+---
 
-Mapbox AI - integrating inteteractive maps
+## Run Locally
 
-Key Features:
-
-Multilingual Support: Extend usage to tourists from various countries and regions within India
-
-Chatbot : Giving recommendations on nearby places and safety tips to tourists
-
-Geofencing : High risk areas will be identified and tourists entering those areas will be issued a warning
-
-Automated Alerts : If a tourist is diconnected for too long . AI anamoly detection will also be used to generated alerts based on previous patterns
-
-Authorities Dasboard : Dasboard for police / tourism officers to see active tourists and alerts . Tourist clusters can also be identified to increase secuirty . Feature to assign person/team on a paricular alert to increase validity
-
-
-Follow these steps to run the project locally
-
-Clone the Repository
-
-git clone GITHUB_LINK_TO_THE_REPO
+### Clone the Repository
+```bash
+git clone https://github.com/striixxxx/GaurdianGo
 cd GAURDIANGO
-
-enter the backend directory
-
+```
+### Enter the backend directory
+```bash
 cd code/backend
+```
+### Create and activate virtual environment
 
-
-create and activate virtual environment
-
+#Mac/Linux
+```bash
 python -m venv venv
+source venv/bin/activate
+```
+# Windows
+```bash
+python -m venv venv
+venv\Scripts\activate
+```
 
- source venv/bin/activate # Mac/Linux 
- 
- venv\Scripts\activate # Windows
-
-
-install requirements
-
+### Install requirements
+```bash
 pip install -r requirements.txt
-
-
-Run the project 
-
+```
+ 
+### Run the project
+```bash
 uvicorn app.main:app --reload
-
-
+```
 
 
