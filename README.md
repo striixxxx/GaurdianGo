@@ -25,9 +25,9 @@ A guardian-app that tries its best to keep people safe — with a friendly UI, f
 ## Project Links (click and teleport)
 - **SIH Presentation:** [Final SIH Presentation](https://www.canva.com/design/DAGzQM_ldZg/VG982x1wPVQpJZIU9rm78A/edit?utm_content=DAGzQM_ldZg&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 - **Video Demonstration:** [Watch Video](https://www.youtube.com/watch?v=WcF6FMgVQ8M)
-- **Live Deployment:** [View Deployment](https://gaurdiangoapp.onrender.com/)  ;;; [Alt Link](https://gaurdiango.onrender.com/)  
+- **Live Deployment:** [View Deployment 1](https://gaurdiangoapp.onrender.com/)  ;;; [View Deployment 2](https://gaurdiango.onrender.com/)  
   - **Demo credentials:** username: `bob`  |  password: `12345`
-- **Source Code:** [GitHub Repository](https://github.com/striixxxx/GaurdianGo)  ;;; [Alt Repo](https://github.com/striixxxx/GaurdianGoapp)
+- **Source Code:** [GitHub Repository 1](https://github.com/striixxxx/GaurdianGo)  ;;; [Github Repository 2](https://github.com/striixxxx/GaurdianGoapp)
 
 ---
 
